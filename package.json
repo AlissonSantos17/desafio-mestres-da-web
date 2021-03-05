@@ -1,0 +1,24 @@
+{
+  "name": "desafio-mestres-da-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AlissonSantos17/desafio-mestres-da-web.git",
+  "author": "AlissonSantos17 <alisson.wiin@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx nodemon --exec ts-node src/server.ts",
+    "typeorm": "npx ts-node node_modules/typeorm/cli.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.31"
+  }
+}
