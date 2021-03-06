@@ -1,18 +1,14 @@
 {
   "type": "postgres",
-  "host": "localhost",
+  "host": "database-abfln.ctaato9ab42d.us-east-1.rds.amazonaws.com",
   "port": 5432,
-  "username": "admin",
-  "password": "admin",
-  "database": "mdweb",
+  "username": "abfln",
+  "password": "j*oi7Eh$3^NdoBRe!G^8",
+  "database": "alisson",
   "synchronize": true,
-  "logging": true,
-  "entities": [
-     "./src/models/*.ts"
-  ],
-  "migrations": [
-     "./src/migration/*.ts"
-  ],
+  "logging": false,
+  "migrations": ["./src/database/migrations/**.ts"],
+  "entities": ["./src/models/**.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
   }
