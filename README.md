@@ -58,11 +58,13 @@ Describe your project
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
+- [Express](https://expressjs.com/pt-br/)
 - [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [JWT](https://jwt.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Typeorm](https://typeorm.io/#/)
+- [React](https://pt-br.reactjs.org/)
 
 ## :white_check_mark: Requirements ##
 
