@@ -4,26 +4,27 @@ import { getRepository } from 'typeorm';
 import User from '../models/User';
 
 class UserController {
-  index(request: Request, response: Response) {
-    return response.send({ userID: request.userId });
-  }
+  async listUser(request: Request, response: Response) {
+    const users = await getRepository(User).find();
+    
+    return response.json(users);
+  };
 
-
-  async store(request: Request, response: Response) {
+  async create(request: Request, response: Response) {
     const repository = getRepository(User);
-    const { email, password } = request.body;
-
+    const { name, email, password, isAdmin } = request.body;
+    
     const userExists = await repository.findOne({ where: { email } });
 
     if(userExists) {
       return response.sendStatus(409);
     }
 
-    const user = repository.create({ email, password });
+    const user = repository.create({ name, email, password, isAdmin });
     await repository.save(user);
 
     return response.json(user);
-  }
+  };
 }
 
 export default new UserController();

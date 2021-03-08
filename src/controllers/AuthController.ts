@@ -7,28 +7,34 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
 class AuthController {
-  async authenticate(request: Request, response: Response) {
-    const repository = getRepository(User);
+  async login(request: Request, response: Response) {
     const { email, password } = request.body;
+    const repository = getRepository(User);
 
-    const user = await repository.findOne({ where: { email } });
+    const user = await repository.find({
+      where: { email }
+    })
 
-    if(!user) {
-      return response.sendStatus(409);
-    }
+    if(user.length === 1) {
+      if(await bcrypt.compare(password, user[0].password)) {
+        const token = jwt.sign({ id: user[0].id }, `${process.env.APP_SECRET}`, { expiresIn: '1d'});
+        
+        const data = {
+          id: user[0].id,
+          name: user[0].name,
+          email: user[0].email,
+          token
+        };
 
-    const isValidPassword = await bcrypt.compare(password, user.password);
-    
-    if(!isValidPassword) {
-      response.sendStatus(401);
-    }
+        return response.status(200).json(data);
+      } else {
+        return response.status(401).json({ message: 'User not found' });
+      }
 
-    const token = jwt.sign({ id: user.id }, `${process.env.SECRET}`, { expiresIn: '1d'});
+    } else {
+      return response.status(401).json({ message: 'User not found' });
+    };
 
-    // @ts-expect-error
-    delete user.password;
-
-    return response.json({ user, token });
   }
 }
 

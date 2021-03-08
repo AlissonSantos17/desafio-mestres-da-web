@@ -1,30 +1,30 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
+import auth from '../config/auth';
+
 interface TokenPayload {
   id: string;
   iat: number;
   exp: number;
 }
 
-export default function authMiddleware(request: Request,  response: Response, next: NextFunction) {
-  const { authorization } = request.headers;
-
-  if(!authorization) {
-    return response.send(401);
+export const authMiddleware = async (request: Request,  response: Response, next: NextFunction) => {
+  const authHeader = request.headers.authorization;
+  
+  if (!authHeader) {
+    throw new Error ('Token is Required!')    
   }
 
-  const token = authorization.replace('Bearer', '').trim();
+  const token = authHeader.replace('Bearer', '').trim();
 
   try {
-    const data = jwt.verify(token, `${process.env.SECRET}`);
-  
+    const data = jwt.verify(token, auth.jwt.secret);
     const { id } = data as TokenPayload;
 
     request.userId = id;
-
-    return next()
+    return next();
   } catch {
-    return response.send(401);
+    throw new Error ('Token is Invalid!')    
   }
 }

@@ -1,0 +1,25 @@
+Descrição:
+Com o atual cenário da pandemia, as empresas de todos os seguimentos tiveram que acelerar seu processo tecnológico, afim de continuar entregando valor para seu consumidor.
+
+Sendo assim, crie um sistema capaz de gerenciar o estoque de uma loja virtual de roupas, em que apenas o administrador da plataforma seja capaz de criar, listar, editar e deletar produtos.
+
+Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de variações do mesmo produto, indicando a quantidade correspondente a cada SKU. Ex: Camiseta com tamanhos P, M, G; Tênis com tamanhos 39, 40, 41, 42.
+
+
+REQUISITOS:
+  NodeJS; (FEITO)
+  Express ou outro framework; (FEITO)
+  Banco de Dados relacional; (FEITO)
+  CRUD de produtos;
+  Autenticação de Usuário (JWT); (FEITO)
+  GIT. (FEITO)
+
+
+Diferenciais
+  Typescript; (FEITO)
+  Typeorm; (FEITO)
+  TDD;
+  SOLID;
+  Docker;
+  Front-end para manipulação dos dados.
+

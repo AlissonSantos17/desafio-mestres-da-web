@@ -1,9 +1,0 @@
-REQUISITOS:
-  NodeJS;
-  Express ou outro framework;
-  Banco de Dados relacional;
-  CRUD de produtos;
-  Autenticação de Usuário (JWT);
-  GIT.
-
-
