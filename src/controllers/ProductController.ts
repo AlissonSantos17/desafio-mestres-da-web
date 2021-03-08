@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
-import Product from '../models/Products';
 
 import Products from '../models/Products';
 
@@ -34,10 +33,10 @@ class ProductController {
   async updateProduct(request: Request, response: Response) {
     const { id } = request.params;
 
-    const product = await getRepository(Product).update(id, request.body);
+    const product = await getRepository(Products).update(id, request.body);
 
     if(product.affected === 1) {
-      const productUpdated = await getRepository(Product).findOne(id);
+      const productUpdated = await getRepository(Products).findOne(id);
       return response.json(productUpdated);
     }
 
@@ -47,10 +46,10 @@ class ProductController {
   async deleteProduct(request: Request, response: Response) {
     const { id } = request.params;
 
-    const product = await getRepository(Product).delete(id);
+    const product = await getRepository(Products).delete(id);
 
     if(product.affected === 1) {
-      await getRepository(Product).findOne(id);
+      await getRepository(Products).findOne(id);
       return response.json({ message: 'Product removed!'});
     }
 

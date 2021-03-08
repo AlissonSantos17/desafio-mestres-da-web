@@ -2,12 +2,13 @@ import { Router } from 'express';
 
 import { authMiddleware } from '../middlewares/authMiddleware';
 import ProductController from '../controllers/ProductController';
+// import verifyAdmin from '../middlewares/verification';
 
-const router = Router();
+const productRouter = Router();
 
-router.post('/create', authMiddleware, ProductController.createProduct);
-router.get('/listProducts', authMiddleware, ProductController.listProducts);
-router.put('/updateProduct/:id', authMiddleware, ProductController.updateProduct);
-router.delete('/delete/:id', authMiddleware, ProductController.deleteProduct);
+productRouter.post('/create', authMiddleware, ProductController.createProduct);
+productRouter.get('/listProducts', authMiddleware, ProductController.listProducts);
+productRouter.put('/updateProduct/:id', authMiddleware, ProductController.updateProduct);
+productRouter.delete('/delete/:id', authMiddleware, ProductController.deleteProduct);
 
-export default router;
+export default productRouter;

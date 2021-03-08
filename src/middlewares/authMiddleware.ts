@@ -13,18 +13,20 @@ export const authMiddleware = async (request: Request,  response: Response, next
   const authHeader = request.headers.authorization;
   
   if (!authHeader) {
-    throw new Error ('Token is Required!')    
+    return response.status(404).json({ message: 'Token is Required!'});
   }
 
   const token = authHeader.replace('Bearer', '').trim();
 
   try {
     const data = jwt.verify(token, auth.jwt.secret);
+
     const { id } = data as TokenPayload;
 
     request.userId = id;
+
     return next();
   } catch {
-    throw new Error ('Token is Invalid!')    
+    return response.status(404).json({ message: 'Token is Invalid!'});
   }
-}
+};

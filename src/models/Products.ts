@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from "typeorm";
+import Stock from './Stock';
 
 @Entity('products')
 class Product {
@@ -20,7 +21,6 @@ class Product {
   @Column()
   sku: string;
 
-
   @Column()
   description: string;
 
@@ -30,6 +30,8 @@ class Product {
   @UpdateDateColumn()
   updated_at: Date
 
+  @OneToMany(type => Stock, stock => stock.product)
+  stocks: Stock[];
 }
 
 export default Product;

@@ -14,7 +14,7 @@ class AuthController {
     const user = await repository.find({
       where: { email }
     })
-
+    
     if(user.length === 1) {
       if(await bcrypt.compare(password, user[0].password)) {
         const token = jwt.sign({ id: user[0].id }, `${process.env.APP_SECRET}`, { expiresIn: '1d'});
@@ -23,7 +23,8 @@ class AuthController {
           id: user[0].id,
           name: user[0].name,
           email: user[0].email,
-          token
+          token,
+          isAdmin: user[0].isAdmin
         };
 
         return response.status(200).json(data);

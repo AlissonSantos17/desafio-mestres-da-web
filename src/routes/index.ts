@@ -4,12 +4,9 @@ import { Request, Response } from 'express';
 import sessionRoutes from './session.routes';
 import userRoutes from './user.routes';
 import productRoutes from './product.routes';
+import stockRoutes from './stock.routes';
 
 const router = Router();
-
-router.get("/", (request: Request, response: Response) => {
-  response.json({ message: 'Seja bem vindo!'})
-});
 
 // Login de usuario
 router.use('/session', sessionRoutes);
@@ -19,5 +16,9 @@ router.use('/users', userRoutes);
 
 //Criação de produtos, modificação, exclusão e listagem
 router.use('/products', productRoutes);
+
+//Criação de usuarios e listagem
+router.use('/stock', stockRoutes);
+
 
 export default router;
