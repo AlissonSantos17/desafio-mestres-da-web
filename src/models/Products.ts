@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate, CreateDateColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate, CreateDateColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('products')
 class Product {
@@ -12,13 +12,24 @@ class Product {
   price: number;
 
   @Column()
+  size: string;
+
+  @Column()
+  color: string;
+
+  @Column()
   sku: string;
+
 
   @Column()
   description: string;
 
   @CreateDateColumn()
   created_at: Date
+
+  @UpdateDateColumn()
+  updated_at: Date
+
 }
 
 export default Product;

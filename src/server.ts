@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 
 import './database/connect';
-import routes from './routes';
+import routes from './routes/index';
 
 const app = express();
 

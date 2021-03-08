@@ -1,25 +1,22 @@
-import { Request, Response } from 'express';
-import { Router } from 'express';
+// import { Router } from 'express';
 
-import { authMiddleware } from './middlewares/authMiddleware';
-import UserController from './controllers/UserController';
-import AuthController from './controllers/AuthController';
+// import UserController from './controllers/UserController';
+// import ProductController from './controllers/ProductController';
 
-const router = Router();
+// import AuthController from './controllers/AuthController';
+// import { authMiddleware } from './middlewares/authMiddleware';
 
-router.get("/", (request: Request, response: Response) => {
-  response.json({ message: 'Seja bem vindo!'})
-})
+// const router = Router();
 
-//Criar usuario, listagem e autenticação
-router.post('/session', AuthController.login);
-router.use(authMiddleware);
+// //Criar usuario, listagem e autenticação
+// router.post('/session', AuthController.login);
 
-router.post('/users', UserController.create);
-router.get('/users', UserController.listUser);
+// router.post('/users', authMiddleware, UserController.create);
+// router.get('/users', authMiddleware, UserController.listUser);
 
-//Products
+// //Products
+// router.post('/products', authMiddleware, ProductController.createProduct);
+// router.get('/products', authMiddleware, ProductController.listProducts);
+// router.put('/products/:id', authMiddleware, ProductController.updateProduct);
+// router.delete('/products/:id', authMiddleware, ProductController.deleteProduct);
 
-
-
-export default router;
