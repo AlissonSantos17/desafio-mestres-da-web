@@ -87,8 +87,8 @@ Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de v
 
 ### /users
 
--   `POST`: /create -> Cria novo usuario.
--   `GET`: /listUsers -> Lista todos os usúarios da base de dados.
+-   `POST`: /create : Cria novo usuario.
+-   `GET`: /listUsers : Lista todos os usúarios da base de dados.
 
 ### /session/login
 
@@ -97,16 +97,16 @@ Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de v
 ### /products/
 - É necessario colocar o token de autorização criado ao iniciar o login retornado no response;
 
--   `POST`: /create -> Lista todos os dados de um único contato;
--   `GET `: /listProducts -> Lista todos os produtos cadastrado na base de dados;
--   `PUT`: /updateProduct/:id -> Faz o update de produto passando o id como parâmetro;
--   `DELETE`: /delete/:id -> Deleta produto passando o ID como parâmetro;
+-   `POST`: /create : Lista todos os dados de um único contato;
+-   `GET `: /listProducts : Lista todos os produtos cadastrado na base de dados;
+-   `PUT`: /updateProduct/:id : Faz o update de produto passando o id como parâmetro;
+-   `DELETE`: /delete/:id : Deleta produto passando o ID como parâmetro;
 
 ### /stock/
 - É necessario colocar o token de autorização criado ao iniciar o login retornado no response;
 
--   `POST`: /:id -> Cria um stock de produto passando ID como parâmetro;
--   `GET `: /:id -> Lista de um produto passando o ID como parâmetro;
+-   `POST`: /:id : Cria um stock de produto passando ID como parâmetro;
+-   `GET `: /:id : Lista o Stock de produto passando o ID como parâmetro;
 
 
 ## :rocket: Technologies ##
