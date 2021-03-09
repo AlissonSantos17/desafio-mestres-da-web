@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import StockController from '../controllers/StockController';
-import authMiddleware from '../middlewares/authMiddleware';
+import { authMiddleware } from '../middlewares/authMiddleware';
 
 const router = Router();
 
