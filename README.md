@@ -82,82 +82,24 @@ Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de v
 
   Front-end para manipulação dos dados.
 
-## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;
+## Endpoints
 
-  A primeira feature consiste na criação do usúario onde o mesmo passa os campos de "nome, email, password e se é Admnistrador";
+### /users
 
-  Rota -> /users/create = Cria usuario;
+-   `POST`: /create -> Cria novo usuario.
+-   `GET`: /listUsers -> Lista todos os usúarios da base de dados.
 
-  Parâmetros: Chamada tipo POST.
+### /session/login
 
-  
-  {
-    "name": "admin",
-    "email": "admin@gmail.com",
-    "password": "123",
-    "isAdmin": true
-  }
+-   `POST`: Faz login e é retornado no response um token para autenticação que será utilizado ao realizar o CRUD de objetos.
 
-  Após isso, ele faz o login com o usuario e senha e é gerado um token de autenticação;
+### /products/
 
-  Rota -> /session/login = Faz o login com o usúario e senha e é gerado um token de autenticação;
-
-  Parâmetros: Chamada tipo POST.
-
-
-  {
-	  "email": "admin@gmail.com",
-	  "password": "123"
-  }
-
-  Caso o usúario desejar verificar os usuarios cadastrados basta adicionar o token de autenticação ao header para realizar a listagem de usúarios cadastrados;
-
-  OBS: O token é retornado no response da chamada.
-
-  Parâmetros: Chamada tipo GET.
-
-  Adicionar Token retornado no response ao header.
-
-  Ex de retorno:
-
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY4YzVmOWRlLTgxOWEtNDQ4Ni1hZjU3LWQ4N2I0NzZkZGNjZiIsImlhdCI6MTYxNTI0NDc5MSwiZXhwIjoxNjE1MzMxMTkxfQ.iFJaitp7vOH5W71y3LauS7zJlkECdnO9rLmKgc3BcCE"
-
-  Rota -> /users/listUsers = Verifica usúarios cadastrados na base de dados;
-
-
-:heavy_check_mark: Feature 2;
-  A segunda feature consiste no CRUD dos produtos, é importante ressaltar que o usúario só poderá realizar o CRUD se estiver autenticado no sistema, ou seja, precisa fazer o login e pegar o token de autenticação e adicionar ao header.
-
-  Parâmetros: Chamada tipo POST.
-
-  Rota -> /products/create = É criado o produto informado por seus parametros;
-
-
-  {
-    "name": "BONE",
-    "price": 55.25,
-    "size": "G",
-    "color": "CINZA",
-    "sku": "BN-55-CN-G",
-    "description": "BONE TAMANHO G - COR CINZA - PREÇO R$ 55.25 - SKU BONE-55.25-CN-G"
-  } 
-
-  Após isso, basta verificar quais produtos estão cadastrados na base;
-
-  Obs: Só é possivel verificar se o token estiver adicionado ao header.
-
-  Parâmetros: Chamada tipo GET.
-
-  Rota -> /products/list = É criado o produto informado por seus parametros;
-
-  É retornada a lista de produtos cadastrados na base de dados
-  
-
-  /products/updateProduct/:id
-
-:heavy_check_mark: Feature 3;
+-   `POST`: /create -> Lista todos os dados de um único contato;
+-   `GET `: /listProducts -> Lista todos os produtos cadastrado na base de dados;
+-   `PUT`: /updateProduct/:id -> Faz o update de produto passando o id como parametro;
+-   `DELETE`: /delete/:id -> Deleta produto passando o ID como parametro;
 
 ## :rocket: Technologies ##
 
@@ -187,7 +129,7 @@ $ cd desafio-mestres-da-web
 $ yarn
 
 # Run the project
-$ yarn start
+$ yarn dev
 
 # The server will initialize in the <http://localhost:3000>
 ```
