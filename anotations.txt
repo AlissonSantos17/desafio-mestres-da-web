@@ -10,7 +10,7 @@ REQUISITOS:
   NodeJS; (FEITO)
   Express ou outro framework; (FEITO)
   Banco de Dados relacional; (FEITO)
-  CRUD de produtos;
+  CRUD de produtos; (FEITO)
   Autenticação de Usuário (JWT); (FEITO)
   GIT. (FEITO)
 
