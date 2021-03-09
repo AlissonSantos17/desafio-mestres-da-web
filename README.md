@@ -46,13 +46,68 @@
 
 ## :dart: About ##
 
-Describe your project
+Primeiramente queria agradecer a equipe Mestres da Web por me da essa chance para mostrar meus conhecimentos abtidos até hoje nesse desafio.
 
-## :sparkles: Features ##
+Com o atual cenário da pandemia, as empresas de todos os seguimentos tiveram que acelerar seu processo tecnológico, afim de continuar entregando valor para seu consumidor.
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+Sendo assim, crie um sistema capaz de gerenciar o estoque de uma loja virtual de roupas, em que apenas o administrador da plataforma seja capaz de criar, listar, editar e deletar produtos.
+
+Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de variações do mesmo produto, indicando a quantidade correspondente a cada SKU. Ex: Camiseta com tamanhos P, M, G; Tênis com tamanhos 39, 40, 41, 42.
+
+## O que foi usado no projeto:
+
+### REQUISITOS:
+  NodeJS; :heavy_check_mark:
+
+  Express ou outro framework; :heavy_check_mark:
+
+  Banco de Dados relacional; :heavy_check_mark:
+
+  CRUD de produtos; :heavy_check_mark:
+
+  Autenticação de Usuário (JWT); :heavy_check_mark:
+
+  GIT. :heavy_check_mark:
+
+### Diferenciais:
+  Typescript; :heavy_check_mark:
+
+  Typeorm; :heavy_check_mark:
+
+  TDD;
+
+  SOLID;
+
+  Docker;
+
+  Front-end para manipulação dos dados.
+
+
+## Endpoints
+
+### /users
+
+-   `POST`: /create : Cria novo usuario.
+-   `GET`: /listUsers : Lista todos os usúarios da base de dados.
+
+### /session/login
+
+-   `POST`: Faz login e é retornado no response um token para autenticação que será utilizado ao realizar o CRUD de objetos.
+
+### /products/
+- É necessario colocar o token de autorização criado ao iniciar o login retornado no response;
+
+-   `POST`: /create : Lista todos os dados de um único contato;
+-   `GET `: /listProducts : Lista todos os produtos cadastrado na base de dados;
+-   `PUT`: /updateProduct/:id : Faz o update de produto passando o id como parâmetro;
+-   `DELETE`: /delete/:id : Deleta produto passando o ID como parâmetro;
+
+### /stock/
+- É necessario colocar o token de autorização criado ao iniciar o login retornado no response;
+
+-   `POST`: /:id : Cria um stock de produto passando ID como parâmetro;
+-   `GET `: /:id : Lista o Stock de produto passando o ID como parâmetro;
+
 
 ## :rocket: Technologies ##
 
@@ -64,7 +119,6 @@ The following tools were used in this project:
 - [JWT](https://jwt.io/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Typeorm](https://typeorm.io/#/)
-- [React](https://pt-br.reactjs.org/)
 
 ## :white_check_mark: Requirements ##
 
@@ -83,7 +137,7 @@ $ cd desafio-mestres-da-web
 $ yarn
 
 # Run the project
-$ yarn start
+$ yarn dev
 
 # The server will initialize in the <http://localhost:3000>
 ```
