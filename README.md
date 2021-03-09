@@ -95,11 +95,19 @@ Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de v
 -   `POST`: Faz login e é retornado no response um token para autenticação que será utilizado ao realizar o CRUD de objetos.
 
 ### /products/
+- É necessario colocar o token de autorização criado ao iniciar o login retornado no response;
 
 -   `POST`: /create -> Lista todos os dados de um único contato;
 -   `GET `: /listProducts -> Lista todos os produtos cadastrado na base de dados;
--   `PUT`: /updateProduct/:id -> Faz o update de produto passando o id como parametro;
--   `DELETE`: /delete/:id -> Deleta produto passando o ID como parametro;
+-   `PUT`: /updateProduct/:id -> Faz o update de produto passando o id como parâmetro;
+-   `DELETE`: /delete/:id -> Deleta produto passando o ID como parâmetro;
+
+### /stock/
+- É necessario colocar o token de autorização criado ao iniciar o login retornado no response;
+
+-   `POST`: /:id -> Cria um stock de produto passando ID como parâmetro;
+-   `GET `: /:id -> Lista de um produto passando o ID como parâmetro;
+
 
 ## :rocket: Technologies ##
 
