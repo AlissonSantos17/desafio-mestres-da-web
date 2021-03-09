@@ -109,6 +109,10 @@ Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de v
 -   `GET `: /:id : Lista o Stock de produto passando o ID como parâmetro;
 
 
+#### Usúario criado:
+- email: admin@gmail.com - senha: admin
+
+
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
