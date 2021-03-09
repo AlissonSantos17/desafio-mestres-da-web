@@ -57,21 +57,21 @@ Todos os produtos devem apresentar a opção de cadastros de SKUs, ou seja, de v
 ## O que foi usado no projeto:
 
 ### REQUISITOS:
-  NodeJS; :heavy_check_mark:
-  Express ou outro framework; :heavy_check_mark:
-  Banco de Dados relacional; :heavy_check_mark:
-  CRUD de produtos; :heavy_check_mark:
-  Autenticação de Usuário (JWT); :heavy_check_mark:
-  GIT. :heavy_check_mark:
+  NodeJS; :heavy_check_mark:/
+  Express ou outro framework; :heavy_check_mark:/
+  Banco de Dados relacional; :heavy_check_mark:/
+  CRUD de produtos; :heavy_check_mark:/
+  Autenticação de Usuário (JWT); :heavy_check_mark:/
+  GIT. :heavy_check_mark:/
 
 
 ### Diferenciais:
-  Typescript; :heavy_check_mark:
-  Typeorm; :heavy_check_mark:
-  TDD;
-  SOLID;
-  Docker;
-  Front-end para manipulação dos dados.
+  Typescript; :heavy_check_mark:/
+  Typeorm; :heavy_check_mark:/
+  TDD;/
+  SOLID;/
+  Docker;/
+  Front-end para manipulação dos dados./
 
 
 ## :sparkles: Features ##
@@ -142,7 +142,6 @@ The following tools were used in this project:
 - [JWT](https://jwt.io/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Typeorm](https://typeorm.io/#/)
-- [React](https://pt-br.reactjs.org/)
 
 ## :white_check_mark: Requirements ##
 
